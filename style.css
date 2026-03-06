@@ -1307,3 +1307,152 @@ footer {
     font-size: 0.85rem;
     color: var(--text-secondary);
 }
+
+/* Base Responsive Elements */
+@media (max-width: 600px) {
+
+    /* Navbar Adjustment */
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+
+    .nav-actions .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    #openSignIn.btn {
+        display: none !important;
+        /* Hide sign-in on super small, or just shrink it. Let's shrink it instead */
+    }
+
+    #openSignIn {
+        display: inline-block !important;
+        /* Override the hiding above if wanted, actually let's just make it tight */
+    }
+
+    /* Hero / Search Adjustment */
+    main {
+        padding-top: 100px;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        gap: 0.5rem;
+    }
+
+    .search-bar input {
+        width: 100%;
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: var(--radius-full);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .search-bar ion-icon {
+        display: none;
+        /* Hide icon inside mobile search */
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    /* Modal Mobile */
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .auth-tab {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Seller Dashboard Mobile Adjustments */
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .dash-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .dash-actions .btn {
+        flex: 1;
+        padding: 0.75rem;
+        font-size: 0.85rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dash-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .stat-details h3 {
+        font-size: 1.25rem;
+    }
+
+    .dash-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Steps and Categories */
+    .steps-container {
+        gap: 1.5rem;
+    }
+
+    .step {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .dash-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
