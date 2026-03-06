@@ -20,9 +20,9 @@
                 <span>SooqSwap</span>
             </div>
             <div class="nav-links">
-                <a href="#" id="navExplore" class="active">Explore</a>
-                <a href="#">Categories</a>
-                <a href="#">How it Works</a>
+                <a href="#services" id="navExplore" class="active">Explore</a>
+                <a href="#categories">Categories</a>
+                <a href="#how-it-works">How it Works</a>
             </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
@@ -35,14 +35,16 @@
         </div>
     </nav>
 
+    <!-- Global GenZ Floating Background Elements -->
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+
     <main>
         <div id="landingView">
             <section class="hero">
-                <!-- Floating Background Elements -->
-                <div class="floating-shape shape-1"></div>
-                <div class="floating-shape shape-2"></div>
-                <div class="floating-shape shape-3"></div>
-
                 <div class="hero-content">
                     <h1>Hire the best student talent on campus.</h1>
                     <p>Find perfect freelance services from your peers for your next dorm project or startup.</p>
@@ -68,7 +70,7 @@
             </section>
 
             <!-- New Feature: Browse Categories -->
-            <section class="categories">
+            <section class="categories" id="categories">
                 <div class="section-header">
                     <h2>Explore Categories</h2>
                 </div>
@@ -78,34 +80,61 @@
                             <ion-icon name="color-palette"></ion-icon>
                         </div>
                         <h3>Design & Art</h3>
-                        <p>Logos, UI/UX, Illustration</p>
+                        <p>Logos, UI/UX, Illustration <ion-icon name="chevron-down-outline"
+                                class="cat-caret"></ion-icon></p>
+                        <div class="category-dropdown">
+                            <a href="#">Logo Design</a>
+                            <a href="#">Brand Identity</a>
+                            <a href="#">UI/UX Prototyping</a>
+                            <a href="#">Illustration</a>
+                        </div>
                     </div>
                     <div class="category-card">
                         <div class="cat-icon-wrapper" style="background: var(--img-bg-2); color: #0d9488;">
                             <ion-icon name="code-slash"></ion-icon>
                         </div>
                         <h3>Tech & Coding</h3>
-                        <p>Web Dev, Scripts, Apps</p>
+                        <p>Web Dev, Scripts, Apps <ion-icon name="chevron-down-outline" class="cat-caret"></ion-icon>
+                        </p>
+                        <div class="category-dropdown">
+                            <a href="#">Frontend Development</a>
+                            <a href="#">Python Scripts</a>
+                            <a href="#">AI Integrations</a>
+                            <a href="#">Mobile Apps</a>
+                        </div>
                     </div>
                     <div class="category-card">
                         <div class="cat-icon-wrapper" style="background: var(--img-bg-3); color: #db2777;">
                             <ion-icon name="videocam"></ion-icon>
                         </div>
                         <h3>Video & Audio</h3>
-                        <p>Editing, Motion Graphics</p>
+                        <p>Editing, Motion Graphics <ion-icon name="chevron-down-outline" class="cat-caret"></ion-icon>
+                        </p>
+                        <div class="category-dropdown">
+                            <a href="#">Video Editing</a>
+                            <a href="#">Podcast Editing</a>
+                            <a href="#">Short-form Content</a>
+                            <a href="#">Motion Graphics</a>
+                        </div>
                     </div>
                     <div class="category-card">
                         <div class="cat-icon-wrapper" style="background: var(--img-bg-4); color: #0284c7;">
                             <ion-icon name="pencil"></ion-icon>
                         </div>
                         <h3>Writing & Translation</h3>
-                        <p>Essays, Copywriting</p>
+                        <p>Essays, Copywriting <ion-icon name="chevron-down-outline" class="cat-caret"></ion-icon></p>
+                        <div class="category-dropdown">
+                            <a href="#">Proofreading</a>
+                            <a href="#">Resume Writing</a>
+                            <a href="#">Blog Posts</a>
+                            <a href="#">Translation Services</a>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- New Feature: How It Works -->
-            <section class="how-it-works">
+            <section class="how-it-works" id="how-it-works">
                 <div class="section-header center">
                     <h2>How SooqSwap Works</h2>
                 </div>
@@ -140,10 +169,9 @@
             <section class="services" id="services">
                 <div class="section-header">
                     <h2>Featured Services</h2>
-                    <a href="#" class="view-all">View All <ion-icon name="arrow-forward-outline"></ion-icon></a>
                 </div>
 
-                <div class="services-grid">
+                <div class="services-grid collapsed" id="featuredServicesGrid">
                     <!-- Card 1 -->
                     <div class="service-card" style="cursor: pointer;" onclick="window.location.href='seller.html'">
                         <div class="card-image" style="background-color: var(--img-bg-1);">
@@ -156,6 +184,8 @@
                                 <span class="level">Level 2 Seller</span>
                             </div>
                             <h3>I will design a modern minimalist logo for your brand</h3>
+                            <div class="hidden-search-tags" style="display:none;">graphic design logo design brand
+                                identity illustration ui/ux prototyping</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -189,6 +219,8 @@
                                 <span class="level">Top Rated</span>
                             </div>
                             <h3>I will build a responsive React website for your startup</h3>
+                            <div class="hidden-search-tags" style="display:none;">web dev frontend development mobile
+                                apps tech coding react</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -222,6 +254,8 @@
                                 <span class="level">Level 1 Seller</span>
                             </div>
                             <h3>I will edit your YouTube videos with dynamic effects</h3>
+                            <div class="hidden-search-tags" style="display:none;">video editing podcast editing
+                                short-form content motion graphics youtube</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -255,6 +289,8 @@
                                 <span class="level">New Seller</span>
                             </div>
                             <h3>I will tutor you in College Algebra & Calculus 1</h3>
+                            <div class="hidden-search-tags" style="display:none;">tutoring math algebra calculus
+                                education</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -287,6 +323,8 @@
                                 <span class="level">Level 2 Seller</span>
                             </div>
                             <h3>I will tutor you in AP Physics and Chemistry</h3>
+                            <div class="hidden-search-tags" style="display:none;">tutoring physics chemistry science
+                                education</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -320,6 +358,8 @@
                                 <span class="level">Top Rated</span>
                             </div>
                             <h3>I will help you ace Macro and Micro Economics</h3>
+                            <div class="hidden-search-tags" style="display:none;">tutoring economics macro micro finance
+                                business</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -353,6 +393,8 @@
                                 <span class="level">Level 1 Seller</span>
                             </div>
                             <h3>I will proofread your essays and tutor you in English Lit</h3>
+                            <div class="hidden-search-tags" style="display:none;">tutoring english literature
+                                proofreading resume writing blog posts translation services essays</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -386,6 +428,8 @@
                                 <span class="level">Level 2 Seller</span>
                             </div>
                             <h3>I will tutor you in intro Business Strategy and Finance</h3>
+                            <div class="hidden-search-tags" style="display:none;">tutoring business strategy finance
+                            </div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -419,6 +463,8 @@
                                 <span class="level">Top Rated</span>
                             </div>
                             <h3>I will professionally edit and retouch your photos</h3>
+                            <div class="hidden-search-tags" style="display:none;">photo editing retouch images design
+                                art</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -452,6 +498,8 @@
                                 <span class="level">Level 2 Seller</span>
                             </div>
                             <h3>I will integrate Gemini or OpenAI into your web app</h3>
+                            <div class="hidden-search-tags" style="display:none;">tech coding python scripts ai
+                                integrations gemini openai chatgpt apps</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -485,6 +533,8 @@
                                 <span class="level">New Seller</span>
                             </div>
                             <h3>I will craft highly optimized AI prompts for your workflow</h3>
+                            <div class="hidden-search-tags" style="display:none;">ai integrations prompt engineering
+                                tech coding</div>
                             <div class="card-footer">
                                 <div class="rating">
                                     <ion-icon name="star"></ion-icon>
@@ -505,6 +555,14 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3.5rem;">
+                    <button id="viewAllBtn" class="btn btn-outline"
+                        style="padding: 1rem 2rem; font-size: 1.1rem; border-radius: 30px;">
+                        View All Services <ion-icon name="chevron-down-outline"
+                            style="vertical-align: middle; margin-left: 0.5rem;"></ion-icon>
+                    </button>
                 </div>
             </section>
         </div>
@@ -680,99 +738,100 @@
                 <ion-icon name="flash" class="modal-logo-icon"></ion-icon>
                 <h2>Welcome Back</h2>
                 <p>Sign in to your SooqSwap account</p>
-            </div>
-            <div class="auth-tabs">
-                <button class="auth-tab active" id="tabSeller">Seller (Student/Individual)</button>
-                <button class="auth-tab" id="tabBuyer">Buyer (Enterprise)</button>
-            </div>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tabSeller">Freelancer (Seller)</button>
+                    <button class="auth-tab" id="tabBuyer">Client (Student/Enterprise)</button>
+                </div>
 
-            <!-- Seller Form -->
-            <form class="modal-form" id="formSeller">
-                <p class="form-hint">Login using your .edu or personal email to sell services.</p>
-                <div class="input-group">
-                    <label>Educational/Personal Email</label>
-                    <input type="email" placeholder="student@university.edu or name@gmail.com" required>
-                </div>
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
-                </div>
-                <button type="button" class="btn btn-primary btn-full">Sign In as Seller</button>
-            </form>
+                <!-- Seller Form -->
+                <form class="modal-form" id="formSeller">
+                    <p class="form-hint">Login using your .edu or personal email to sell services.</p>
+                    <div class="input-group">
+                        <label>Educational/Personal Email</label>
+                        <input type="email" placeholder="student@university.edu or name@gmail.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full">Sign In as Seller</button>
+                </form>
 
-            <!-- Buyer Form -->
-            <form class="modal-form" id="formBuyer" style="display: none;">
-                <p class="form-hint">Login with your enterprise email to hire student talent.</p>
-                <div class="input-group">
-                    <label>Enterprise Email Address</label>
-                    <input type="email" placeholder="name@company.com" required>
+                <!-- Buyer Form -->
+                <form class="modal-form" id="formBuyer" style="display: none;">
+                    <p class="form-hint">Login with your student or enterprise email to hire talent. (Pricing
+                        dynamically adjusts to you!)</p>
+                    <div class="input-group">
+                        <label>Student/Enterprise Email Address</label>
+                        <input type="email" id="buyerEmail" placeholder="name@company.com or name@university.edu"
+                            required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full">Sign In as Buyer</button>
+                </form>
+                <div class="modal-footer">
+                    <p>Don't have an account? <a href="#">Join Now</a></p>
                 </div>
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="••••••••" required>
-                </div>
-                <button type="button" class="btn btn-primary btn-full">Sign In as Buyer</button>
-            </form>
-            <div class="modal-footer">
-                <p>Don't have an account? <a href="#">Join Now</a></p>
             </div>
         </div>
-    </div>
 
-    <!-- New Feature: Info Modal -->
-    <div class="modal-overlay" id="infoModal">
-        <div class="modal-content" style="max-width: 500px;">
-            <button class="close-modal" id="closeInfoModal"><ion-icon name="close"></ion-icon></button>
-            <div class="modal-header" style="margin-bottom: 1rem;">
-                <ion-icon name="information-circle" class="modal-logo-icon"
-                    style="color: var(--brand-primary);"></ion-icon>
-                <h2 id="infoModalTitle">Details</h2>
-            </div>
-            <div id="infoModalBody" style="color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">
-                <!-- Dynamically filled -->
-            </div>
-            <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
-                <button class="btn btn-primary" id="infoModalAckBtn">Got it</button>
+        <!-- New Feature: Info Modal -->
+        <div class="modal-overlay" id="infoModal">
+            <div class="modal-content" style="max-width: 500px;">
+                <button class="close-modal" id="closeInfoModal"><ion-icon name="close"></ion-icon></button>
+                <div class="modal-header" style="margin-bottom: 1rem;">
+                    <ion-icon name="information-circle" class="modal-logo-icon"
+                        style="color: var(--brand-primary);"></ion-icon>
+                    <h2 id="infoModalTitle">Details</h2>
+                </div>
+                <div id="infoModalBody" style="color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">
+                    <!-- Dynamically filled -->
+                </div>
+                <div style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                    <button class="btn btn-primary" id="infoModalAckBtn">Got it</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- AI Chatbot Feature -->
-    <div class="chatbot-container">
-        <!-- Floating Toggle Button -->
-        <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">
-            <ion-icon name="chatbubble-ellipses"></ion-icon>
-        </button>
+        <!-- AI Chatbot Feature -->
+        <div class="chatbot-container">
+            <!-- Floating Toggle Button -->
+            <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">
+                <ion-icon name="chatbubble-ellipses"></ion-icon>
+            </button>
 
-        <!-- Chat Window -->
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <div class="chat-header-info">
-                    <ion-icon name="sparkles" class="ai-sparkle"></ion-icon>
-                    <h3>SooqSwap AI</h3>
+            <!-- Chat Window -->
+            <div class="chat-window" id="chatWindow">
+                <div class="chat-header">
+                    <div class="chat-header-info">
+                        <ion-icon name="sparkles" class="ai-sparkle"></ion-icon>
+                        <h3>SooqSwap AI</h3>
+                    </div>
+                    <button class="close-chat" id="closeChatBtn"><ion-icon name="close"></ion-icon></button>
                 </div>
-                <button class="close-chat" id="closeChatBtn"><ion-icon name="close"></ion-icon></button>
-            </div>
 
-            <div class="chat-messages" id="chatMessages">
-                <!-- Default Welcome Message -->
-                <div class="message ai-message">
-                    <div class="message-content">
-                        Hi! I'm the SooqSwap AI assistant. Are you looking for a specific student freelancer today?
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Default Welcome Message -->
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            Hi! I'm the SooqSwap AI assistant. Are you looking for a specific student freelancer today?
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="chat-input-area">
-                <input type="text" id="chatInput" placeholder="Ask finding a freelancer..." autocomplete="off">
-                <button class="chat-send-btn" id="chatSendBtn">
-                    <ion-icon name="send"></ion-icon>
-                </button>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" placeholder="Ask finding a freelancer..." autocomplete="off">
+                    <button class="chat-send-btn" id="chatSendBtn">
+                        <ion-icon name="send"></ion-icon>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
