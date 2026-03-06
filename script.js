@@ -23,6 +23,26 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
     });
 
+    // Handle View All Services Button
+    const viewAllBtn = document.getElementById('viewAllBtn');
+    const featuredServicesGrid = document.getElementById('featuredServicesGrid');
+
+    if (viewAllBtn && featuredServicesGrid) {
+        viewAllBtn.addEventListener('click', () => {
+            const isCollapsed = featuredServicesGrid.classList.contains('collapsed');
+
+            if (isCollapsed) {
+                featuredServicesGrid.classList.remove('collapsed');
+                viewAllBtn.innerHTML = 'Show Less <ion-icon name="chevron-up-outline" style="vertical-align: middle; margin-left: 0.5rem;"></ion-icon>';
+            } else {
+                featuredServicesGrid.classList.add('collapsed');
+                viewAllBtn.innerHTML = 'View All Services <ion-icon name="chevron-down-outline" style="vertical-align: middle; margin-left: 0.5rem;"></ion-icon>';
+                // Scroll back to top of services area
+                document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
     // Simple interaction for search bar focus
     const searchBar = document.querySelector('.search-bar');
     const searchInput = document.querySelector('.search-bar input');
@@ -342,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let hasVisibleCards = false;
 
         serviceCards.forEach(card => {
-            const textContent = card.innerText.toLowerCase();
+            const textContent = card.textContent.toLowerCase();
             // simple text matching
             if (textContent.includes(query)) {
                 card.style.display = 'block';
@@ -406,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const allServiceCards = document.querySelectorAll('.service-card');
 
         allServiceCards.forEach(card => {
-            const textContent = card.innerText.toLowerCase();
+            const textContent = card.textContent.toLowerCase();
             const sellerName = card.querySelector('.seller-name').textContent;
             const serviceTitle = card.querySelector('h3').textContent;
             const iconName = card.querySelector('.card-icon').getAttribute('name');
@@ -470,7 +490,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (servicesSection) servicesSection.scrollIntoView({ behavior: 'smooth' });
             });
         }
+
+        // Popular tags click behavior
+        const popularTags = document.querySelectorAll('.popular-tags .tag');
+        popularTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                heroSearchInput.value = tag.textContent;
+                performLiveSearch();
+                heroSearchInput.focus();
+            });
+        });
+
     }
+
+    // Category card dropdown behavior
+    const categoryCards = document.querySelectorAll('.category-card');
+    categoryCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') {
+                e.preventDefault();
+                const subCat = e.target.textContent;
+                const heroSearchInput = document.getElementById('heroSearchInput');
+                if (heroSearchInput) {
+                    heroSearchInput.value = subCat;
+                    // Trigger live search
+                    heroSearchInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+                    const heroSearchBtn = document.getElementById('heroSearchBtn');
+                    if (heroSearchBtn) heroSearchBtn.click();
+                }
+                return;
+            }
+
+            const isCurrentlyActive = card.classList.contains('active');
+
+            // Collapse all other categories
+            categoryCards.forEach(c => c.classList.remove('active'));
+
+            // Toggle the clicked category
+            if (!isCurrentlyActive) {
+                card.classList.add('active');
+            }
+        });
+    });
 
     // --- Wire Grid Cards to Seller Page ---
     const gridCards = document.querySelectorAll('.service-card');
